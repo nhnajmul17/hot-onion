@@ -10,7 +10,6 @@ import Home from './pages/Home/Home/Home';
 import Error from './pages/Error/Error';
 import Login from './pages/Login/Login/Login';
 import SignUp from './pages/Login/SignUp/SignUp';
-import Footer from './pages/Home/Footer/Footer';
 import Menu from './pages/Menus/Menu/Menu';
 
 function App() {
@@ -29,12 +28,6 @@ function App() {
           <Route path='/menu'>
             <Menu></Menu>
           </Route>
-          <Route path='/menu'>
-            <Menu></Menu>
-          </Route>
-          <Route path='/menu'>
-            <Menu></Menu>
-          </Route>
           <Route path='/login'>
             <Login></Login>
           </Route>
@@ -46,7 +39,7 @@ function App() {
             <Error></Error>
           </Route>
         </Switch>
-        <Footer></Footer>
+
       </Router>
     </div>
   );

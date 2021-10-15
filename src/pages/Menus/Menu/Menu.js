@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
+import Footer from '../../Shared/Footer/Footer';
 import Breakfast from '../Breakfast/Breakfast';
 import Dinner from '../Dinner/Dinner';
 import Lunch from '../Lunch/Lunch';
@@ -29,6 +30,8 @@ const Menu = () => {
         <div>
             <div id='breakfast'>
                 <h2 className='mb-3 mt-3 fs-1'> <span className='text-success'>Breakfast</span> <span className='text-warning'>Items</span></h2>
+                <hr />
+
 
                 <Row xs={1} md={2} className="g-4">
                     {
@@ -41,6 +44,8 @@ const Menu = () => {
             </div>
             <div id='lunch'>
                 <h2 className='mb-3 mt-3 fs-1'> <span className='text-danger'>Lunch</span> <span className='text-warning'>Items</span></h2>
+                <hr />
+
 
                 <Row xs={1} md={2} className="g-4">
                     {
@@ -53,6 +58,8 @@ const Menu = () => {
             </div>
             <div id='dinner'>
                 <h2 className='mb-3 mt-3 fs-1'> <span className='text-info'>Dinner</span> <span className='text-warning'>Items</span></h2>
+                <hr />
+
 
                 <Row xs={1} md={2} className="g-4">
                     {
@@ -64,7 +71,9 @@ const Menu = () => {
                 </Row>
             </div>
 
+            <Footer></Footer>
         </div>
+
     );
 };
 
