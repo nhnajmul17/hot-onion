@@ -1,8 +1,16 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { useHistory } from 'react-router';
+
 
 const Breakfast = (props) => {
     const { name, price, picture } = props.item
+    const history = useHistory()
+    const handleOrderNow = () => {
+        history.push('/login')
+    }
     return (
         <div>
             <Col>
@@ -15,6 +23,7 @@ const Breakfast = (props) => {
                             lead-in to additional content. This content is a little bit longer.
                         </Card.Text>
                         <h3>Price: ${price}</h3>
+                        <button className='btn btn-danger rounded-pill' onClick={handleOrderNow}> <FontAwesomeIcon icon={faShoppingCart} className='text-warning fs-4 me-2' /> Order Now</button>
                     </Card.Body>
                 </Card>
             </Col>
