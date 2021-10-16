@@ -12,6 +12,8 @@ import Login from './pages/Login/Login/Login';
 import SignUp from './pages/Login/SignUp/SignUp';
 import Menu from './pages/Menus/Menu/Menu';
 import Authprovider from './Contexts/Authprovider';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import Details from './pages/Details/Details';
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
             <Route path='/menu'>
               <Menu></Menu>
             </Route>
+            <PrivateRoute path='/details'>
+              <Details></Details>
+            </PrivateRoute>
             <Route path='/login'>
               <Login></Login>
             </Route>

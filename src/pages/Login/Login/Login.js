@@ -9,6 +9,7 @@ import Footer from '../../Shared/Footer/Footer';
 const Login = () => {
     const { handleGoogle, error, handleGithub, handleSingIn, handleEmail, handlePassword } = useAuth();
 
+
     return (
         <div>
             <div style={{ height: '100vh' }}>

@@ -22,14 +22,16 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
                             <NavDropdown title="Menu" id="collasible-nav-dropdown">
                                 <NavDropdown.Item as={HashLink} to="/menu#breakfast">Breakfast</NavDropdown.Item>
                                 <NavDropdown.Item as={HashLink} to="/menu#lunch">Lunch</NavDropdown.Item>
                                 <NavDropdown.Item as={HashLink} to="/menu#dinner">Dinner</NavDropdown.Item>
                             </NavDropdown>
+                            <Nav.Link as={HashLink} to="/details">Food Details</Nav.Link>
+
                             <p className='ms-3 text-white me-3'>{user?.displayName}</p>
                             <p className='ms-2 text-white'>{user?.email}</p>
+
                         </Nav>
 
 

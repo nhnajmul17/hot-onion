@@ -9,7 +9,7 @@ const Breakfast = (props) => {
     const { name, price, picture } = props.item
     const history = useHistory()
     const handleOrderNow = () => {
-        history.push('/login')
+        history.push('/details')
     }
     return (
         <div>
