@@ -3,9 +3,11 @@ import logo from '../../../images/logo.png'
 import { Container, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
@@ -26,13 +28,19 @@ const Header = () => {
                                 <NavDropdown.Item as={HashLink} to="/menu#lunch">Lunch</NavDropdown.Item>
                                 <NavDropdown.Item as={HashLink} to="/menu#dinner">Dinner</NavDropdown.Item>
                             </NavDropdown>
+                            <p className='ms-3 text-white me-3'>{user?.displayName}</p>
+                            <p className='ms-2 text-white'>{user?.email}</p>
                         </Nav>
+
+
                         <Nav>
-                            <Nav.Link as={HashLink} to="/login"><Button variant="dark" className='text-white rounded-pill'>Login</Button>
-                            </Nav.Link>
-                            <Nav.Link as={HashLink} to="/signup">
+
+                            {user?.email ? <Button onClick={logOut} variant="dark">Logout</Button> : <Nav.Link as={HashLink} to="/login"><Button variant="dark" className='text-white rounded-pill'>Login</Button>
+                            </Nav.Link>}
+                            {user?.email ? <p>{' '}</p> : < Nav.Link as={HashLink} to="/signup">
                                 <Button variant="danger" className='rounded-pill'>Sign Up</Button>
-                            </Nav.Link>
+                            </Nav.Link>}
+
 
                         </Nav>
                     </Navbar.Collapse>
